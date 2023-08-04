@@ -1,0 +1,52 @@
+<input #checkbox1 type="checkbox" name="toggle" id="toggle">
+<label for="toggle"></label>
+
+<div class="container">
+
+</div>
+
+<div class="formAdd">
+ <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="hidden" name="id" [value]="proService.productData.id">
+
+                <label for="name" class="float-left">Name</label>
+                <div *ngIf="name.invalid && (name.touched || name.dirty)" class="float-right">
+                    <p class="text-danger">Required</p>
+
+                </div>
+                <input type="text" name="name" class="form-control" placeholder="Enter Product Name" #name="ngModel" [(ngModel)]="proService.productData.name" required >
+
+            </div>
+            <div class="col-md-3">
+                <label for="brandId" class="float-left">Brand Id</label>
+                <div *ngIf="brandId.invalid && (brandId.touched || brandId.dirty)" class="float-right">
+                    <p class="text-danger">Required</p>
+
+                </div>
+                <input type="number" name="brandId" class="form-control" placeholder="Enter Brand Id" #brandId="ngModel" [(ngModel)]="proService.productData.brandId" required >
+            </div>
+            <div class="col-md-3">
+                <label for="categoryId" class="float-left">Category Id</label>
+                <div *ngIf="categoryId.invalid && (categoryId.touched || categoryId.dirty)" class="float-right">
+                    <p class="text-danger">Required</p>
+
+                </div>
+                <input type="number" name="categoryId" class="form-control" placeholder="Enter Category Id" #categoryId="ngModel" [(ngModel)]="proService.productData.categoryId" required >
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-success btn-block">Save</button>
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+ </form>    
+</div>

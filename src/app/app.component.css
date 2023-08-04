@@ -1,0 +1,15 @@
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+
+.row{
+    background: #dbdfe5;
+}
+.demo-content{
+    padding: 25px;
+    font-size: 18px;
+    background: #abb1b8;
+}
